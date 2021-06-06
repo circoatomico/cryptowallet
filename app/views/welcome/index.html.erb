@@ -1,11 +1,17 @@
-<h1>Seja bem vindo!</h1>
+<%# Renderização de partials, espécie de components %>
+<%= render "menu" %>
 
 <ul>
-  <li>
+  <%# <li>
     <a href="/coins"> Cadastro de moedas </a>
-  </li>
+  </li> %>
   <li>
     <%# observe http://localhost:3000/rails/info/routes %>
     <%= link_to "Cadastro de Moedas", coins_path %>
+  </li>
+
+  <li>
+    <%# observe http://localhost:3000/rails/info/routes %>
+    <%= link_to "Cadastro de Tipos de Mineração", mining_types_path %>
   </li>
 </ul>
