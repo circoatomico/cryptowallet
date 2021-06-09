@@ -6,10 +6,38 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    params[:controller], media: 'all', 'data-turbolinks-track': 'reload' %> 
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %> 
+    <%= javascript_include_tag params[:controller], 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <%= link_to 'Crypto Wallet', root_path, class: "navbar-brand" %>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"> 
+              <%= link_to 'Home', root_path, class: "nav-link active" %>
+            </li> 
+            <li class="nav-item">
+              <%= link_to 'Português', root_path(locale: 'pt-BR'), class: "nav-link" %>
+            </li> 
+            <li class="nav-item">
+              <%= link_to 'Inglês', root_path(locale: 'en'), class: "nav-link" %>
+            </li>  
+          </ul> 
+        </div>
+      </div>
+    </nav>
+
+    <div clas="container p-4">
+      <%= yield %>
+    </div>
   </body>
-</html>
+</html> 

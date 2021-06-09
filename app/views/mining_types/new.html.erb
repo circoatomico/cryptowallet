@@ -1,5 +1,9 @@
-<h1>New Mining Type</h1>
+<h1 class="text-center">New Mining Type</h1>
 
-<%= render 'form', mining_type: @mining_type %>
+<div class="card m-4 p-2" style="width: 35rem;">
+  <%= render 'form', mining_type: @mining_type %>
+</div>
 
-<%= link_to 'Back', mining_types_path %>
+<div class="m-2">
+  <%= link_to 'Back', mining_types_path, class: "btn btn-sm btn-primary" %>
+</div>

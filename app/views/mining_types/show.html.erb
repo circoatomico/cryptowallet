@@ -1,14 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @mining_type.description %>
-</p>
+<div class="card m-4" style="width: 18rem;">
+  <div class="card-body">
+    
+    <h5 class="card-title"><%= @mining_type.acronym %></h5>
+    
+    <p class="card-text">
+      <%= @mining_type.description %>
+    </p>
 
-<p>
-  <strong>Acronym:</strong>
-  <%= @mining_type.acronym %>
-</p>
+    <hr>
 
-<%= link_to 'Edit', edit_mining_type_path(@mining_type) %> |
-<%= link_to 'Back', mining_types_path %>
+    <%= link_to 'Edit', edit_mining_type_path(@mining_type), class: "btn btn-sm btn-primary" %> |
+    <%= link_to 'Back', mining_types_path, class: "btn btn-sm btn-primary" %>
+ 
+  </div>
+</div> 

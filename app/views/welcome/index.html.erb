@@ -1,17 +1,9 @@
-<%# Renderização de partials, espécie de components %>
-<%= render "menu" %>
-
-<ul>
-  <%# <li>
-    <a href="/coins"> Cadastro de moedas </a>
-  </li> %>
-  <li>
-    <%# observe http://localhost:3000/rails/info/routes %>
-    <%= link_to "Cadastro de Moedas", coins_path %>
-  </li>
-
-  <li>
-    <%# observe http://localhost:3000/rails/info/routes %>
-    <%= link_to "Cadastro de Tipos de Mineração", mining_types_path %>
-  </li>
-</ul>
+<div class="p-5 m-4 bg-light rounded-3">
+  <div class="py-5">
+    <h2 class="display-5 fw-bold"><%= t('messages.welcome') %> <%= nome_application %> </h2>
+    <hr>
+    <p class="col-md-12 fs-6"> <%= t('messages.welcome_option') %></p>
+    <%# Renderização de partials, espécie de components %>
+    <%= render "menu" %>
+  </div>
+</div>
