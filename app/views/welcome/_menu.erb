@@ -1,6 +1,8 @@
-<h1><%= nome_application %> </h1>
+<%# observe http://localhost:3000/rails/info/routes %>
+<%= link_to "#{Coin.model_name.human}", coins_path, class: "btn btn-primary btn-lg", role: "button" %>
 
-<p> Bem vindo <%=@nome%> ao curso de <%= @curso %> </p>
+<%# observe http://localhost:3000/rails/info/routes %>
+<%= link_to "#{MiningType.model_name.human}", mining_types_path, class: "btn btn-primary btn-lg", role: "button"  %>
 
 <%# Usando formatação de data %>
 <%# Essa funcao data_br é uma funcao que foi criado dentro de helpers/application_helper.rb %>

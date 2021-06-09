@@ -1,7 +1,12 @@
-<h1>Editing Coin</h1>
+<h1 class="text-center"><%= t('editing.coin') %></h1>
+ 
+<p id="notice"><%= notice %></p>
 
-<%= render 'form', coin: @coin %>
+<div class="card m-4 p-2" style="width: 35rem;">
+  <%= render 'form', coin: @coin %>
+</div> 
 
-<%= link_to 'Show', @coin %> |
-<%= link_to 'Show', @coin %> |
-<%= link_to 'Back', coins_path %>
+<div class="p-2">
+  <%= link_to t('links.show'), @coin, class: "btn btn-primary btn-sm" %> 
+  <%= link_to t('links.back'), coins_path, class: "btn btn-primary btn-sm" %>
+</div>

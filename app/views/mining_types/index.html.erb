@@ -1,29 +1,34 @@
-<p id="notice"><%= notice %></p>
+<div class="p-5 m-4 bg-light rounded-3">
+  <div class="py-5">
 
-<h1>Mining Types</h1>
+    <p id="notice" class="<%= notice.present? ? '' : 'visually-hidden' %>"><%=notice%></p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Description</th>
-      <th>Acronym</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <h1><%= MiningType.model_name.human(count: @mining_types.count) %></h1>
 
-  <tbody>
-    <% @mining_types.each do |mining_type| %>
-      <tr>
-        <td><%= mining_type.description %></td>
-        <td><%= mining_type.acronym %></td>
-        <td><%= link_to 'Show', mining_type %></td>
-        <td><%= link_to 'Edit', edit_mining_type_path(mining_type) %></td>
-        <td><%= link_to 'Destroy', mining_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <table class="table">
+      <thead>
+        <tr>
+          <th> <%= @mining_types.human_attribute_name(:description) %> </th>
+          <th> <%= @mining_types.human_attribute_name(:acronym) %> </th> 
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-<br>
+      <tbody>
+        <% @mining_types.each do |mining_type| %>
+          <tr>
+            <td><%= mining_type.description %></td>
+            <td><%= mining_type.acronym %></td>
+            <td><%= link_to 'Show', mining_type, class: "btn btn-primary btn-sm" %></td>
+            <td><%= link_to 'Edit', edit_mining_type_path(mining_type), class: "btn btn-primary btn-sm" %></td>
+            <td><%= link_to 'Destroy', mining_type, method: :delete, data: { confirm: t('messages.confirm') }, class: "btn btn-danger btn-sm" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 
-<%= link_to 'New Mining Type', new_mining_type_path %>
+    <br>
+
+    <%= link_to t('new.mining_type'), new_mining_type_path, class: "btn btn-primary btn-sm" %>
+  </div>
+</div>
